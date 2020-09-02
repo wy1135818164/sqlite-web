@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block sidebar %}
-  <input class="form-control form-control-sm" id="table-search" placeholder="table name..." type="text" />
+  <input class="form-control form-control-sm" id="table-search" placeholder="数据表名称..." type="text" />
   <ul class="nav flex-column nav-pills" role="tablist">
     {% set virtual_tables_corollary = dataset.get_corollary_virtual_tables() %}
     {% for table_name in dataset.tables|sort %}
@@ -18,7 +18,7 @@
     {% endfor %}
   </ul>
   <hr />
-  <p><a href="#" id="toggle-helper-tables">Toggle helper tables</a></p>
+  <p><a href="#" id="toggle-helper-tables">切换助手表</a></p>
   <ul class="nav nav-pills nav-stacked" id="helper-tables" role="tablist"{% if table not in virtual_tables_corollary %} style="display:none;"{% endif %}>
     {% for table_name in virtual_tables_corollary|sort %}
       <li{% if table and table_name == table %} class="active"{% endif %}>

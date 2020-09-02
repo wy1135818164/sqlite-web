@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/sqlbrowse.css') }}" />
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/syntax-highlight.css') }}" />
@@ -39,8 +40,8 @@
             {% if not dataset.is_readonly %}
             <form action="{{ url_for('table_create') }}" class="form-inline float-right" method="post" style="margin-top: 10px;">
               <input name="redirect" type="hidden" value="{{ request.path }}" />
-              <input class="form-control form-control-sm" name="table_name" placeholder="new_table_name" />
-              <button class="btn btn-primary btn-sm" type="submit">Create</button>
+              <input class="form-control form-control-sm" name="table_name" placeholder="新建数据表" />
+              <button class="btn btn-primary btn-sm" type="submit">新建</button>
             </form>
             {% endif %}
           {% endblock %}
@@ -50,7 +51,7 @@
       <div class="row">
         <div class="col-3" id="sidebar">
           {% block sidebar %}{% endblock %}
-          {% block logout %}{% if login_required %}<a href="{{ url_for('logout') }}">Log-out</a>{% endif %}{% endblock %}
+          {% block logout %}{% if login_required %}<a href="{{ url_for('logout') }}">登出</a>{% endif %}{% endblock %}
         </div>
         <div class="col-9" id="content">
           {% for category, message in get_flashed_messages(with_categories=true) %}
@@ -67,9 +68,8 @@
           <footer>
             <hr />
             <p>
-              Web-based SQLite database browser, powered by
-              <a href="http://flask.pocoo.org/">Flask</a> and <a href="http://docs.peewee-orm.com/">Peewee</a>.
-              &copy; {{ now.year }} <a href="http://charlesleifer.com/">Charles Leifer</a>
+              基于<a href="http://flask.pocoo.org/">Flask</a> 和 <a href="http://docs.peewee-orm.com/">Peewee</a>的Web版SQLite数据库浏览器。
+              &copy; {{ now.year }} <a href="http://charlesleifer.com/">Charles Leifer</a><p>中科核安-王焱·汉化</p>
             </p>
           </footer>
         </div>

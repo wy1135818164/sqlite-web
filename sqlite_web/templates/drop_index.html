@@ -3,18 +3,18 @@
 {% block structure_tab_class %} active{% endblock %}
 
 {% block inner_content %}
-<h3>Drop Index</h3>
+<h3>删除索引</h3>
 <form action="{{ url_for('drop_index', table=table) }}" class="form" method="post">
   <div class="form-group">
-    <label for="id_name">Index name</label>
+    <label for="id_name">索引名称</label>
     <select class="form-control" id="id_name" name="name">
-      <option value="">Select index</option>
+      <option value="">选择索引</option>
       {% for index in indexes %}
         <option {% if index.name == name %}selected="selected" {% endif %}value="{{ index.name }}">{{ index.name }}</option>
       {% endfor %}
     </select>
   </div>
-  <button class="btn btn-danger" type="submit">Drop index</button>
-  <a class="btn btn-secondary" href="{{ url_for('table_structure', table=table) }}">Cancel</a>
+  <button class="btn btn-danger" type="submit">删除索引</button>
+  <a class="btn btn-secondary" href="{{ url_for('table_structure', table=table) }}">取消</a>
 </form>
 {% endblock %}

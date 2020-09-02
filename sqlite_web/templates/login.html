@@ -5,12 +5,12 @@
 {% block logout %}{% endblock %}
 
 {% block content %}
-<h3>Login</h3>
+<h3>登录</h3>
 <form action="{{ url_for('login') }}" class="form" method="post">
   <div class="form-group">
-    <label for="id_password">Password</label>
+    <label for="id_password">密码</label>
     <input class="form-control" id="id_password" name="password" type="password" value="" />
   </div>
-  <button class="btn btn-primary" type="submit">Login</button>
+  <button class="btn btn-primary" type="submit">登录</button>
 </form>
 {% endblock %}

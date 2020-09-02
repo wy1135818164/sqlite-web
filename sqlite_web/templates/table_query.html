@@ -40,9 +40,9 @@
 {% block inner_content %}
   <h3>
     <p class="float-right">
-      <a class="btn btn-primary btn-xs" href="#" id="toggleTableInfo">+/- table definition</a>
+      <a class="btn btn-primary btn-xs" href="#" id="toggleTableInfo">+/- 表定义</a>
     </p>
-    Query
+    查询
   </h3>
   <div id="tableInfo">
     {{ table_sql|format_create_table|highlight }}
@@ -55,12 +55,12 @@
         <span class="help-block">{{ error }}</span>
       {% endif %}
     </div>
-    <button class="btn btn-primary" type="submit">Execute</button>
-    <button class="btn btn-secondary" name="export_json" type="submit">Export JSON</button>
-    <button class="btn btn-secondary" name="export_csv" type="submit">Export CSV</button>
+    <button class="btn btn-primary" type="submit">执行</button>
+    <button class="btn btn-secondary" name="export_json" type="submit">导出 JSON</button>
+    <button class="btn btn-secondary" name="export_csv" type="submit">导出 CSV</button>
     <div class="btn-group">
       <div class="dropdown">
-        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">SQL Help</button>
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">SQL 帮助</button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           {% for parts, img_url in query_images %}
             <a class="dropdown-item sql-image" href="{{ url_for('static', filename=img_url) }}">{{ ' : '.join(parts) }}</a>
@@ -116,7 +116,7 @@
         </div>
         <div class="modal-body"></div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
         </div>
       </div>
     </div>

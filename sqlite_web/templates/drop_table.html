@@ -3,14 +3,13 @@
 {% block drop_tab_class %} active{% endblock %}
 
 {% block inner_content %}
-<h3>Drop table</h3>
+<h3>删除表</h3>
 <form action="{{ url_for('drop_table', table=table) }}" class="form" method="post">
   <p>
-    Are you sure you want to drop <strong>{{ table }}</strong> and all
-    associated data?
+    你确定要删除 <strong>{{ table }}</strong> 和全部相关数据吗？
   </p>
-  <p><strong>This action cannot be undone.</strong></p>
-  <button class="btn btn-danger" type="submit">Drop table</button>
-  <a class="btn btn-secondary" href="{{ url_for('table_structure', table=table) }}">Cancel</a>
+  <p><strong>该操作无法撤销！！！</strong></p>
+  <button class="btn btn-danger" type="submit">删除表</button>
+  <a class="btn btn-secondary" href="{{ url_for('table_structure', table=table) }}">取消</a>
 </form>
 {% endblock %}
